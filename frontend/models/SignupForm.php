@@ -33,13 +33,23 @@ class SignupForm extends Model
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => '该邮箱已被注册.'],
 
             [['password','repassword'], 'required'],
             [['password','repassword'], 'string', 'min' => 6],
             ['repassword', 'compare', 'compareAttribute' => 'password','message'=>'两次输入的密码不一致！'],
             
             ['verifyCode', 'captcha'],
+        ];
+    }
+    
+    public function attributeLabels(){
+        return [
+            'username' => '用户名',
+            'email' => '邮箱',
+            'password' => '密码',
+            'repassword' => '重复密码',
+            'verifyCode' => '验证码'
         ];
     }
 
