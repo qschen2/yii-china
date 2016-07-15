@@ -14,6 +14,7 @@ class SignupForm extends Model
     public $password;
     
     public $repassword;
+    public $verifyCode;
 
 
     /**
@@ -37,6 +38,8 @@ class SignupForm extends Model
             [['password','repassword'], 'required'],
             [['password','repassword'], 'string', 'min' => 6],
             ['repassword', 'compare', 'compareAttribute' => 'password','message'=>'两次输入的密码不一致！'],
+            
+            ['verifyCode', 'captcha'],
         ];
     }
 
