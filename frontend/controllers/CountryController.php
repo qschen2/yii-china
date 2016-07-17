@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use yii\web\Controller;
 use frontend\models\Country;
 use yii\data\Pagination;
+use yii\data\ActiveDataProvider;
 class CountryController extends Controller{
     
     public function actionIndex(){
@@ -22,5 +23,21 @@ class CountryController extends Controller{
             'pagination' => $pagination,
         ]);
         
+    }
+    
+    /**
+     * gridview初次尝试
+     * @return Ambigous <string, string>
+     */
+    public function actionGrid(){
+        $dataProvider = new ActiveDataProvider([
+            'query' => Country::find(),
+            'pagination' => [
+                'pageSize' => 4,
+            ],
+        ]);
+        return $this->render('grid',[
+            'dataProvider' => $dataProvider,
+        ]);
     }
 }
