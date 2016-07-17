@@ -10,6 +10,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 use yii\web\View;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 $jsStr = 'jQuery(document).ready(function() {App.init();});';
@@ -41,7 +42,7 @@ $this->registerJs($jsStr,View::POS_END);
 
 				<a class="brand" href="index.html">
 
-				<img src="statics/image/logo.png" alt="logo" />
+				<img src="../statics/image/logo.png" alt="logo" />
 
 				</a>
 
@@ -51,7 +52,7 @@ $this->registerJs($jsStr,View::POS_END);
 
 				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
 
-				<img src="statics/image/menu-toggler.png" alt="" />
+				<img src="../statics/image/menu-toggler.png" alt="" />
 
 				</a>          
 
@@ -201,7 +202,7 @@ $this->registerJs($jsStr,View::POS_END);
 
 								<a href="inbox.html?a=view">
 
-								<span class="photo"><img src="statics/image/avatar2.jpg" alt="" /></span>
+								<span class="photo"><img src="../statics/image/avatar2.jpg" alt="" /></span>
 
 								<span class="subject">
 
@@ -227,7 +228,7 @@ $this->registerJs($jsStr,View::POS_END);
 
 								<a href="inbox.html?a=view">
 
-								<span class="photo"><img src="statics/image/avatar3.jpg" alt="" /></span>
+								<span class="photo"><img src="../statics/image/avatar3.jpg" alt="" /></span>
 
 								<span class="subject">
 
@@ -253,7 +254,7 @@ $this->registerJs($jsStr,View::POS_END);
 
 								<a href="inbox.html?a=view">
 
-								<span class="photo"><img src="statics/image/avatar1.jpg" alt="" /></span>
+								<span class="photo"><img src="../statics/image/avatar1.jpg" alt="" /></span>
 
 								<span class="subject">
 
@@ -457,7 +458,7 @@ $this->registerJs($jsStr,View::POS_END);
 
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-						<img alt="" src="statics/image/avatar1_small.jpg" />
+						<img alt="" src="../statics/image/avatar1_small.jpg" />
 
 						<span class="username">Bob Nilson</span>
 
@@ -479,7 +480,7 @@ $this->registerJs($jsStr,View::POS_END);
 
 							<li><a href="extra_lock.html"><i class="icon-lock"></i> Lock Screen</a></li>
 
-							<li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+							<li><a method="post" href="index.php?r=site/logout"><i class="icon-key"></i> Log Out</a></li>
 
 						</ul>
 
