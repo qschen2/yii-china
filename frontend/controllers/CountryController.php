@@ -40,4 +40,16 @@ class CountryController extends Controller{
             'dataProvider' => $dataProvider,
         ]);
     }
+    
+    public function actionGrid1(){
+        $dataProvider = new ActiveDataProvider([
+            'query'=>Country::find(),
+            'pagination'=>[
+                'pageSize' =>3,  
+            ],
+        ]);
+        return $this->render('grid1',[
+            'dataProvider' =>$dataProvider,
+        ]);
+    }
 }
