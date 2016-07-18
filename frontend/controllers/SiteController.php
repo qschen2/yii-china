@@ -210,4 +210,13 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+    
+    /**
+     *  测试 自定义组件
+     */
+    public function actionTestMyComponet(){
+        
+        $ip = Yii::$app->ReadHttpHeader->RealIP();
+        var_dump($ip);exit('end');
+    }
 }

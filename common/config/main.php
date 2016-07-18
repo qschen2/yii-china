@@ -12,6 +12,9 @@ return [
             'suffix' => '.html',
             'rules' => [
             ],
-        ], 
+        ],
+        'ReadHttpHeader' => [
+            'class' => 'common\components\ReadHttpHeader'
+        ],
     ],
 ];
