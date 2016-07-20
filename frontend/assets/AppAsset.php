@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
     public $js = [
         'statics/js/bootstrap.min.js',
         'statics/js/jquery.prettyPhoto.js',
+        'statics/js/jquery.isotope.min.js',
         'statics/js/main.js',
     ];
     public $depends = [
