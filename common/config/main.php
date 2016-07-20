@@ -6,13 +6,13 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-         'urlManager' => [
+         /* 'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'suffix' => '.html',
             'rules' => [
             ],
-        ],
+        ], */
         'ReadHttpHeader' => [
             'class' => 'common\components\ReadHttpHeader'
         ],
