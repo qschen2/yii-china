@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "50a55a8cf5387b9a3d6d6bf94a730c0e",
-    "content-hash": "ae48f057ff52042157c6d83992e2fdb4",
+    "hash": "7a1f0408f8cdce0cb9d7921b6da770e5",
+    "content-hash": "0d7488dc12e5b7864f1665ad835acfdf",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -378,6 +378,52 @@
             ]
         },
         {
+            "name": "callmez/yii2-file-system",
+            "version": "1.01",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/callmez/yii2-file-system.git",
+                "reference": "a2bbd126050d9dfba6602531e0a1c98530318ccc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/callmez/yii2-file-system/a2bbd126050d9dfba6602531e0a1c98530318ccc.zip",
+                "reference": "a2bbd126050d9dfba6602531e0a1c98530318ccc",
+                "shasum": ""
+            },
+            "require": {
+                "league/flysystem": "*",
+                "qiniu/php-sdk": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "callmez\\file\\system\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "CallMeZ",
+                    "email": "callme-z@qq.com"
+                }
+            ],
+            "description": "This extension provides a filesystem solution for Yii 2.",
+            "keywords": [
+                "Flysystem",
+                "file",
+                "qiniu",
+                "storage",
+                "system",
+                "yii2"
+            ],
+            "time": "2014-12-08 08:13:26"
+        },
+        {
             "name": "cebe/markdown",
             "version": "1.1.0",
             "source": {
@@ -480,6 +526,140 @@
                 "html"
             ],
             "time": "2015-08-05 01:03:42"
+        },
+        {
+            "name": "league/flysystem",
+            "version": "1.0.25",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem.git",
+                "reference": "a76afa4035931be0c78ca8efc6abf3902362f437"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/thephpleague/flysystem/a76afa4035931be0c78ca8efc6abf3902362f437.zip",
+                "reference": "a76afa4035931be0c78ca8efc6abf3902362f437",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "conflict": {
+                "league/flysystem-sftp": "<1.0.6"
+            },
+            "require-dev": {
+                "ext-fileinfo": "*",
+                "mockery/mockery": "~0.9",
+                "phpspec/phpspec": "^2.2",
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-fileinfo": "Required for MimeType",
+                "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
+                "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
+                "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
+                "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
+                "league/flysystem-copy": "Allows you to use Copy.com storage",
+                "league/flysystem-dropbox": "Allows you to use Dropbox storage",
+                "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
+                "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
+                "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
+                "league/flysystem-webdav": "Allows you to use WebDAV storage",
+                "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Filesystem abstraction: Many filesystems, one API.",
+            "keywords": [
+                "Cloud Files",
+                "WebDAV",
+                "abstraction",
+                "aws",
+                "cloud",
+                "copy.com",
+                "dropbox",
+                "file systems",
+                "files",
+                "filesystem",
+                "filesystems",
+                "ftp",
+                "rackspace",
+                "remote",
+                "s3",
+                "sftp",
+                "storage"
+            ],
+            "time": "2016-07-18 12:22:57"
+        },
+        {
+            "name": "qiniu/php-sdk",
+            "version": "v7.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/qiniu/php-sdk.git",
+                "reference": "d1bca450b56d85beb7ba21f374a47bfeb59c288b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/qiniu/php-sdk/d1bca450b56d85beb7ba21f374a47bfeb59c288b.zip",
+                "reference": "d1bca450b56d85beb7ba21f374a47bfeb59c288b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Qiniu\\": "src/Qiniu"
+                },
+                "files": [
+                    "src/Qiniu/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Qiniu",
+                    "email": "sdk@qiniu.com",
+                    "homepage": "http://www.qiniu.com"
+                }
+            ],
+            "description": "Qiniu Resource (Cloud) Storage SDK for PHP",
+            "homepage": "http://developer.qiniu.com/",
+            "keywords": [
+                "cloud",
+                "qiniu",
+                "sdk",
+                "storage"
+            ],
+            "time": "2016-07-19 06:18:08"
         },
         {
             "name": "swiftmailer/swiftmailer",

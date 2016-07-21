@@ -57,4 +57,13 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
+  'callmez/yii2-file-system' => 
+  array (
+    'name' => 'callmez/yii2-file-system',
+    'version' => '1.01.0.0',
+    'alias' => 
+    array (
+      '@callmez/file/system' => $vendorDir . '/callmez/yii2-file-system',
+    ),
+  ),
 );

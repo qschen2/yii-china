@@ -3,6 +3,9 @@
 namespace common\models;
 
 use Yii;
+use common\models\PostTag;
+use common\components\db\ActiveRecord;
+use yii\data\ActiveDataProvider;
 
 /**
  * This is the model class for table "post".
@@ -26,7 +29,7 @@ use Yii;
  * @property string $created_at
  * @property string $updated_at
  */
-class Post extends \yii\db\ActiveRecord
+class Post extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -43,7 +46,7 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             [['post_meta_id', 'user_id', 'view_count', 'comment_count', 'favorite_count', 'like_count', 'hate_count', 'status', 'order', 'created_at', 'updated_at'], 'integer'],
-            [['title', 'image', 'content', 'tags'], 'required'],
+            [['title', 'content', 'tags'], 'required'],
             [['content'], 'string'],
             [['title', 'excerpt', 'image', 'tags'], 'string', 'max' => 255],
             [['author'], 'string', 'max' => 100]
@@ -57,23 +60,51 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'post_meta_id' => 'Post Meta ID',
-            'user_id' => 'User ID',
-            'title' => 'Title',
-            'author' => 'Author',
-            'excerpt' => 'Excerpt',
-            'image' => 'Image',
-            'content' => 'Content',
-            'tags' => 'Tags',
-            'view_count' => 'View Count',
-            'comment_count' => 'Comment Count',
-            'favorite_count' => 'Favorite Count',
-            'like_count' => 'Like Count',
-            'hate_count' => 'Hate Count',
-            'status' => 'Status',
-            'order' => 'Order',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'post_meta_id' => '版块ID',
+            'user_id' => '作者ID',
+            'title' => '标题',
+            'author' => '作者',
+            'excerpt' => '摘要',
+            'image' => '封面图片',
+            'content' => '内容',
+            'tags' => '标签 用空格隔开',
+            'view_count' => '查看数',
+            'comment_count' => '评论数',
+            'favorite_count' => '收藏数',
+            'like_count' => '喜欢数',
+            'hate_count' => '讨厌数',
+            'status' => '状态 1:发布 0：草稿',
+            'order' => '排序 0最大',
+            'created_at' => '创建时间',
+            'updated_at' => '修改时间',
         ];
+    }
+
+    /**
+     * 添加标签
+     * @param array $tags
+     * @return bool
+     */
+    public function addTags(array $tags)
+    {
+        $return = false;
+        $tagItem = new PostTag();
+        foreach ($tags as $tag) {
+            $count = false;
+            $_tagItem = clone $tagItem;
+            $count = $_tagItem::find()
+                ->where(['name' => $tag])
+                ->count();
+            if (!$count) {
+                $_tagItem->setAttributes([
+                    'name' => $tag,
+                    'count' => 1,
+                ]);
+                if ($_tagItem->save()) {
+                    $return = true;
+                }
+            }
+        }
+        return $return;
     }
 }

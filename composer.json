@@ -1,7 +1,7 @@
 {
     "name": "yiisoft/yii2-app-advanced",
-    "description": "Yii 2 Advanced Project Template",
-    "keywords": ["yii2", "framework", "advanced", "project template"],
+    "description": "Yii 2 Advanced Application Template",
+    "keywords": ["yii2", "framework", "advanced", "application template"],
     "homepage": "http://www.yiiframework.com/",
     "type": "project",
     "license": "BSD-3-Clause",
@@ -15,11 +15,16 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": ">=2.0.6",
+        "yiisoft/yii2": "2.0.0",
         "yiisoft/yii2-bootstrap": "*",
-        "yiisoft/yii2-swiftmailer": "*",
+        "callmez/yii2-wechat": "dev-master",
+        "callmez/yii2-wechat-sdk": "dev-master",
+        "mdmsoft/yii2-admin": "~1.0",
+        "callmez/yii2-storage": "*",
+        "callmez/yii2-file-system": "*",
         "bower-asset/pagedown": "*",
-        "bower-asset/selectize": "*"
+        "bower-asset/selectize": "*",
+        "yiisoft/yii2-swiftmailer": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
@@ -35,8 +40,5 @@
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
         }
-    },
-    "scripts": {
-        "post-install-cmd": "php init --env=Development --overwrite=n"
     }
 }

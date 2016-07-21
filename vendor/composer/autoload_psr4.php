@@ -15,5 +15,8 @@ return array(
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
+    'callmez\\file\\system\\' => array($vendorDir . '/callmez/yii2-file-system'),
+    'Qiniu\\' => array($vendorDir . '/qiniu/php-sdk/src/Qiniu'),
+    'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );

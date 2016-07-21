@@ -4,8 +4,9 @@ namespace frontend\controllers;
 
 use Yii;
 use common\Models\Post;
+use common\Models\PostTag;
 use yii\data\ActiveDataProvider;
-use yii\web\Controller;
+use common\components\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -61,9 +62,13 @@ class PostController extends Controller
     public function actionCreate()
     {
         $model = new Post();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->tags = Yii::$app->request->post('tags');
+            $model->addTags(explode(',', $model->tags));
+            if ($model->save()) {
+                $this->flash('发表文章成功!', 'success');
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,

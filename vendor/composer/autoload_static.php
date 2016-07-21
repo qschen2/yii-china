@@ -9,6 +9,7 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
     public static $files = array (
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        '841780ea2e1d6545ea3a253239d59c05' => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -26,6 +27,15 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
+            'callmez\\file\\system\\' => 20,
+        ),
+        'Q' => 
+        array (
+            'Qiniu\\' => 6,
+        ),
+        'L' => 
+        array (
+            'League\\Flysystem\\' => 17,
         ),
         'F' => 
         array (
@@ -69,6 +79,18 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'callmez\\file\\system\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/callmez/yii2-file-system',
+        ),
+        'Qiniu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu',
+        ),
+        'League\\Flysystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/flysystem/src',
         ),
         'Faker\\' => 
         array (

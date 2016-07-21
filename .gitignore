@@ -5,3 +5,4 @@
 .buildpath
 .project
 .buildpath
+/composer.lock
